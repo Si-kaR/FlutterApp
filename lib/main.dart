@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+String getFullName(String firstName, String lastName) {
+  return '$lastName';
+}
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,8 +14,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    print("\nFor people who don't know me already,\nI am " +
+        getFullName('Solomon', 'Ghandi' + "\n"));
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'My Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -31,7 +37,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'My Flutter Demo Home Page'),
     );
   }
 }
@@ -106,8 +112,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
-            ),
+                "                            See the plus (+) sign down there?!\n" +
+                    "Below is the number of times you have interacted with it 🫣"),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
