@@ -7,17 +7,13 @@ void main() {
 //Sometimes we just want to assign nothing to the variable.
 //In such instances, we can explicitly state state that variable be assigned a null.
 
-void test() {
+void test(String? firstName, String? middleName, String? lastName) {
   //Practicing Null and Control Statement
 
   //Task : Choose the first non-null value
-  const String? firstName = null;
-  const String? middleName = 'Addy';
-  const String? lastName = 'Jonah';
-
-  const firstNonNullName = firstName ?? middleName ?? lastName;
+  final firstNonNullValue = firstName ?? middleName ?? lastName;
   print('');
-  print('$firstNonNullName is the first non-null name\n\n');
+  print('$firstNonNullValue is the first non-null value\n');
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +22,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.is oka
   @override
   Widget build(BuildContext context) {
-    test();
+    test(String? firstName, String? middleName, String? lastName);
 
     return MaterialApp(
       title: 'My Flutter Demo',
