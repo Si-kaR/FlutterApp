@@ -3,17 +3,14 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
-// Null
-//Sometimes we just want to assign nothing to the variable.
-//In such instances, we can explicitly state state that variable be assigned a null.
+//null - Awarenss
+// Using ??= o find the first non-null value
 
 void test(String? firstName, String? middleName, String? lastName) {
-  //Practicing Null and Control Statement
-
-  //Task : Choose the first non-null value
-  final firstNonNullValue = firstName ?? middleName ?? lastName;
+  String? name = firstName;
+  name ??= middleName;
   print('');
-  print('$firstNonNullValue is the first non-null value\n');
+  print('$name is the first non-null value\n\n');
 }
 
 class MyApp extends StatelessWidget {
@@ -22,7 +19,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.is oka
   @override
   Widget build(BuildContext context) {
-    test(String? firstName, String? middleName, String? lastName);
+    test(null, 'Addy', 'Jonah');
 
     return MaterialApp(
       title: 'My Flutter Demo',
