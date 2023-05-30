@@ -8,38 +8,20 @@ void main() {
 //In such instances, we can explicitly state state that variable be assigned a null.
 
 void test() {
-  //Telling Dart and Flutter that we want a Nullible Data Type
+  //Practicing Null and Control Statement
 
-  //First, we begin with Strings
-  String? name = null;
-  print(name);
+  //Task : Choose the first non-null value
+  const firstName = null;
+  const middleName = 'Addy';
+  const lastName = 'Jonah';
 
-  name = 'Brandon Fox';
-  print(name);
-
-  //Now we try this with Integers
-  int? number = 2;
-  print(
-      number); //Changing the value 2 to null will cause an error. So best is to put the ? infront of int before doing so
-  number = null;
-  //Removing the ? from the int will cause an error since int number cannot be made null that way.
-
-  //Control Statements
-  //So like If- and else statements are pretty much the same here as well o no need.
-
-  //Lists
-  //Hope the syntax makes sense
-  List<String> names = ['Mandy', 'Ali Gaza', 'Angela'];
-  print(names);
-
-  //Nullifying a List
-  List<String?>? peopleNames = ['Mandy', 'Ali Gaza', 'Angela', null];
-  print(peopleNames);
-  //same applies for integers
-
-  //Nullifying an int
-  List<int?>? ages = [12, 34, 67];
-  print(ages);
+  if (firstName != null) {
+    print('First Name is the first non-null value');
+  } else if (middleName != null) {
+    print('Okay! Middle Name is the first non-null value');
+  } else {
+    print('Fine! Last name is the first non-null value');
+  }
 }
 
 class MyApp extends StatelessWidget {
