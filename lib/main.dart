@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const MyApp());
 }
-//null - Awarenss
-// Using ??= o find the first non-null value
 
-void test(String? firstName, String? middleName, String? lastName) {
-  String? name = firstName;
-  name ??= middleName;
-  print('');
-  print('$name is the first non-null value\n\n');
+//null - Awarenss
+// Accessing Properties of a null object
+//How to know if some value is null or not
+void test(List<String>? name) {
+  //Optional List of Strings
+  if (name != null) {
+    final numberOfNames = name.length;
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.is oka
   @override
   Widget build(BuildContext context) {
-    test(null, 'Addy', 'Jonah');
+    test(['Candy']);
 
     return MaterialApp(
       title: 'My Flutter Demo',
