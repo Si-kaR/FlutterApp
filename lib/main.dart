@@ -9,8 +9,16 @@ void main() {
 //How to know if some value is null or not
 void test(List<String>? name) {
   //Optional List of Strings
-  if (name != null) {
-    final numberOfNames = name.length;
+  final numberOfNames = name?.length;
+  if (numberOfNames == 0) {
+    print('');
+    print('No Name has been addded to the list\n\n');
+  } else if (numberOfNames == 1) {
+    print('');
+    print('There is $numberOfNames name in the list\n\n');
+  } else {
+    print('');
+    print('There are $numberOfNames names in the list\n\n');
   }
 }
 
@@ -20,7 +28,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.is oka
   @override
   Widget build(BuildContext context) {
-    test(['Candy']);
+    test([]);
 
     return MaterialApp(
       title: 'My Flutter Demo',
