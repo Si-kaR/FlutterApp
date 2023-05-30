@@ -11,17 +11,13 @@ void test() {
   //Practicing Null and Control Statement
 
   //Task : Choose the first non-null value
-  const firstName = null;
-  const middleName = 'Addy';
-  const lastName = 'Jonah';
+  const String? firstName = null;
+  const String? middleName = 'Addy';
+  const String? lastName = 'Jonah';
 
-  if (firstName != null) {
-    print('First Name is the first non-null value');
-  } else if (middleName != null) {
-    print('Okay! Middle Name is the first non-null value');
-  } else {
-    print('Fine! Last name is the first non-null value');
-  }
+  const firstNonNullName = firstName ?? middleName ?? lastName;
+  print('');
+  print('$firstNonNullName is the first non-null name\n\n');
 }
 
 class MyApp extends StatelessWidget {
