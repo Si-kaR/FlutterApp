@@ -7,9 +7,11 @@ void main() {
 //null - Awarenss
 // Accessing Properties of a null object
 //How to know if some value is null or not
-void test(List<String>? name) {
+//Practincing how to use the .? method where you can check the value of an optional
+//int without flagging an error
+void test(List<String>? names) {
   //Optional List of Strings
-  final numberOfNames = name?.length;
+  final numberOfNames = names?.length;
   if (numberOfNames == 0) {
     print('');
     print('No Name has been addded to the list\n\n');
@@ -20,6 +22,43 @@ void test(List<String>? name) {
     print('');
     print('There are $numberOfNames names in the list\n\n');
   }
+
+  //Practincing how to use the .? method where you can check the value of an optional
+//int without flagging an error
+  final length = names?.length;
+  if (length == 0) {
+    print('');
+    print('No Name has been added to the list\n\n');
+  } else if (length == 1) {
+    print('');
+    print('There is $length name in the list\n\n');
+  } else {
+    print('');
+    print('There are $length names in the list\n\n');
+  }
+
+// if for some reason the list is a null and we can't extract the length of the list,
+//this is what we do
+//We make use of the ?? Operator
+  final lengths = names?.length ?? 0;
+  if (lengths == 0) {
+    print('');
+    print('No Name has been added to the list\n\n');
+  } else if (lengths == 1) {
+    print('');
+    print('There is $lengths name in the list\n\n');
+  } else {
+    print('');
+    print('There are $lengths names in the list\n\n');
+  }
+//What this is saying here is that,
+//if you check you check your left hand side and the value is not a null then take,
+//otherwise, display the Zer0 (0) indiciating it is a null and that it's length cannot be extracted
+
+//All this while I have been using if and else statements to check the various ways in which I can
+//print the length of the list.
+//Now I am coming to attempt using the ?? and .? combined.
+//Wish me luck
 }
 
 class MyApp extends StatelessWidget {
@@ -31,7 +70,7 @@ class MyApp extends StatelessWidget {
     test([]);
 
     return MaterialApp(
-      title: 'My Flutter Demo',
+      title: 'Flutter Demo || Day 5',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -51,7 +90,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'My Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Flutter | Dart || Day 5'),
     );
   }
 }
